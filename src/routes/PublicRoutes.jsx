@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Signup from "../components/signup/Signup";
 import Login from "../components/login/Login";
+import HomePage from "../components/home/HomePage";
+import AddAnC from "../components/artAndCrafts/addAnC";
+import ArtAndCrafts from "../components/artAndCrafts/ArtAndCrafts";
 
 const router = createBrowserRouter([
     {
@@ -10,11 +13,17 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <div>nigga</div>
+                element: <HomePage></HomePage>
             },
             {
-                path: 'add-AnC',
-                element: <div>niiga2</div>
+                path: 'add-anc',
+                element: <AddAnC></AddAnC>
+            },
+            {
+                path: 'art-and-crafts',
+                element: <ArtAndCrafts></ArtAndCrafts>,
+                loader: () => fetch('http://localhost:5000/paintings')
+
             },
             {
                 path: 'signup',

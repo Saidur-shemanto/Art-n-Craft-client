@@ -1,35 +1,54 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../authentication/AuthProvider";
 const Login = (props) => {
+    const { login } = useContext(AuthContext)
+    const handleLoginSubmit = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+
+        login(email, password)
+            .then(user => console.log(user))
+            .catch(error => console.log(error))
+
+
+    }
     return (
-        <form action="" className="w-[20rem] mx-auto">
+        <form onSubmit={handleLoginSubmit} className="w-[20rem] mx-auto">
             <label className="form-control w-full max-w-xs">
                 <div className="label">
                     <span className="label-text">Email</span>
                 </div>
-                <input type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input name="email" type="email" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
             </label>
-            <br />
+
+
             <label className="form-control w-full max-w-xs">
                 <div className="label">
                     <span className="label-text">Password</span>
                 </div>
-                <input type="password" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input name="password" type="password" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
             </label>
-            <div >
-                <div className="flex">
-                    <div className="flex items-center border-2 p-4">
+            <br />
+            <div className="w-full space-y-2">
+                <div className="flex gap-1">
+                    <div className="flex w-[49%] justify-center items-center btn ">
                         <FaGoogle />
-                        <p>Google</p>
+
                     </div>
-                    <div className="flex items-center border-2 p-4">
+                    <div className="flex w-[49%] justify-center items-center btn ">
                         <FaGithub />
-                        <p>Github</p>
+
                     </div>
                 </div>
+
                 <button className="btn btn-success w-full">Submit</button>
 
             </div>
+            <p>Do not have any account? please <Link to='/signup' className="text-purple-500 underline cursor-pointer">Sign up</Link></p>
 
         </form>
 
