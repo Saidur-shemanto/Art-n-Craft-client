@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li> <NavLink to='/art-and-crafts'>Paintings</NavLink></li>
         <li> <NavLink to='/add-anc'>Add painting</NavLink></li>
-        <li><NavLink to='/my-art-and-crafts'>My Paintings</NavLink></li>
+        <li><NavLink to={user ? `/myAnC/${user.uid}` : 'login'}>My Paintings</NavLink></li>
     </>
     const handleLogOut = () => [
         logout()

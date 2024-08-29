@@ -12,10 +12,15 @@ const Signup = (props) => {
         const password = e.target.password.value
         const email = e.target.email.value
         const photoUrl = e.target.photo.value
+
         const newUser = { name, email, photoUrl }
 
         createUser(email, password)
             .then(user => {
+                const _id = user.user.auth.currentUser.uid
+                newUser._id = _id
+                console.log(newUser)
+
                 fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {

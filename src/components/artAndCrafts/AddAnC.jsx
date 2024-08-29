@@ -4,7 +4,7 @@ import { AuthContext } from '../../authentication/AuthProvider';
 
 const AddAnC = () => {
     const { user } = useContext(AuthContext)
-    console.log(user)
+
     const [subcat, setSubcat] = useState(null)
     const handleCatChange = e => {
 
@@ -24,8 +24,9 @@ const AddAnC = () => {
         const rating = e.target.rating.value
         const custom = e.target.custom.value
         const process = e.target.process.value
+        const userId = user.uid
         const paintInfo = {
-            image, itemName, sub, shortDesc, price, rating, custom, process
+            userId, image, itemName, sub, shortDesc, price, rating, custom, process
         }
         fetch('http://localhost:5000/paintings', {
             method: 'POST',
