@@ -5,18 +5,22 @@ import Footer from '../components/shared/footer/Footer';
 
 const Root = () => {
     return (
-        <>
-            <Navbar></Navbar>
-            <div className='min-h-[75vh]'>
-                <Outlet></Outlet>
+        <div>
+            <div className=' mx-auto container'>
+                <Navbar></Navbar>
+                <div className='min-h-[75vh]'>
+                    <Outlet></Outlet>
+
+                </div>
 
             </div>
+
 
             <Footer></Footer>
 
 
 
-        </>
+        </div>
     );
 };
 

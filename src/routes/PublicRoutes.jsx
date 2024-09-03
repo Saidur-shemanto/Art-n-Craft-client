@@ -6,6 +6,7 @@ import HomePage from "../components/home/HomePage";
 import AddAnC from "../components/artAndCrafts/addAnC";
 import ArtAndCrafts from "../components/artAndCrafts/ArtAndCrafts";
 import MyAnC from "../components/artAndCrafts/MyAnC";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'add-anc',
-                element: <AddAnC></AddAnC>
+                element: <PrivateRoutes><AddAnC></AddAnC></PrivateRoutes>
             },
             {
                 path: 'art-and-crafts',
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myAnC/:id',
-                element: <MyAnC></MyAnC>,
+                element: <PrivateRoutes><MyAnC></MyAnC></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/myPaintings/${params.id}`)
 
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: 'signup',
                 element: <Signup></Signup>,
-                loader: () => fetch(`http://localhost:5000/${id}`),
+
             },
             {
                 path: 'login',

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import PaintingCard from './PaintingCard';
 
 const ArtAndCrafts = () => {
     const [filter, setFilter] = useState('All')
@@ -33,7 +34,7 @@ const ArtAndCrafts = () => {
                     <option value='Cartoon Drawing'>Cartoon Drawing</option>
                 </select>
             </label>
-            {paintings.length}
+            {paintings.map(p => <PaintingCard></PaintingCard>)}
 
         </div>
     );
