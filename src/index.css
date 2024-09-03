@@ -5,3 +5,14 @@
 body {
     background-image: url('../src/assets/bg.jpg');
 }
+
+.navlist:hover {
+    text-decoration: underline;
+
+}
+
+.navlist.active {
+    text-decoration: underline;
+    background-color: transparent !important;
+
+}
