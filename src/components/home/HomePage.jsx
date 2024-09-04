@@ -3,8 +3,11 @@ import Banner from './Banner';
 import ImageBanner from './ImageBanner';
 import TextSection from './TextSection';
 import bgImage from '../../assets/New Project.png'
+import PaintingSlider from './PaintingSlider';
+import { useLoaderData } from 'react-router-dom';
 
 const HomePage = () => {
+    const paintings = useLoaderData()
     return (
         <div>
             <div style={{ backgroundImage: `url(${bgImage})` }}
@@ -15,6 +18,7 @@ const HomePage = () => {
             </div>
 
             <TextSection></TextSection>
+            <PaintingSlider paintings={paintings}></PaintingSlider>
 
         </div>
     );
