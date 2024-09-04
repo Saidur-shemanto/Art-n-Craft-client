@@ -19,7 +19,7 @@ const Navbar = () => {
             .then()
     ]
     return (
-        <div className='bg-transparent'>
+        <div className='bg-black'>
             <div className="navbar bg-transparent container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

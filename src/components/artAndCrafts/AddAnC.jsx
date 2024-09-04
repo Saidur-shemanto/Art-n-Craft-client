@@ -5,14 +5,7 @@ import { AuthContext } from '../../authentication/AuthProvider';
 const AddAnC = () => {
     const { user } = useContext(AuthContext)
 
-    const [subcat, setSubcat] = useState(null)
-    const handleCatChange = e => {
 
-        setSubcat(e.target.value)
-        console.log(subcat)
-
-
-    }
 
     const handleAnCSubmit = (e) => {
         e.preventDefault()
@@ -75,7 +68,7 @@ const AddAnC = () => {
                     <div className="label">
                         <span className="label-text">Sub Category</span>
                     </div>
-                    <select name='subCat' onChange={handleCatChange} className="select select-bordered w-full max-w-xs">
+                    <select name='subCat' className="select select-bordered w-full max-w-xs">
                         <option selected disabled>Select Sub Category</option>
                         <option value='Landscape Painting'>Landscape Painting</option>
                         <option value='Portrait Drawing'>Portrait Drawing</option>
@@ -108,7 +101,11 @@ const AddAnC = () => {
                     <div className="label">
                         <span className="label-text">Customization</span>
                     </div>
-                    <input name="custom" type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <select name='custom' className="select select-bordered w-full max-w-xs">
+                        <option selected value='Yes'>Yes</option>
+                        <option value='No'>No</option>
+
+                    </select>
                 </label>
                 <label className="form-control w-full max-w-xs">
                     <div className="label">

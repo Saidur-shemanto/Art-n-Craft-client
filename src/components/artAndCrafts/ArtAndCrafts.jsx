@@ -3,24 +3,22 @@ import { useLoaderData } from 'react-router-dom';
 import PaintingCard from './PaintingCard';
 
 const ArtAndCrafts = () => {
-    const [filter, setFilter] = useState('All')
     const loader = useLoaderData()
     const [paintings, setPaintings] = useState(loader)
     const handleCatChange = (e) => {
-        setFilter()
         if (e.target.value === 'All') {
             setPaintings(loader)
 
         } else {
-            const filteredPaintings = paintings.filter(paint => paint.sub === e.target.value)
+            const filteredPaintings = loader.filter(paint => paint.sub === e.target.value)
             setPaintings(filteredPaintings)
         }
 
 
     }
     return (
-        <div>
-            <label className="form-control w-full max-w-xs">
+        <div className='container mx-auto '>
+            <label className="form-control w-full max-w-xs mx-auto ">
                 <div className="label">
                     <span className="label-text">Sub Category</span>
                 </div>
@@ -34,7 +32,11 @@ const ArtAndCrafts = () => {
                     <option value='Cartoon Drawing'>Cartoon Drawing</option>
                 </select>
             </label>
-            {paintings.map(p => <PaintingCard></PaintingCard>)}
+            <div className='grid grid-cols-3'>
+                {paintings.map(p => <PaintingCard paintings={p} key={p._id}></PaintingCard>)}
+
+            </div>
+
 
         </div>
     );
