@@ -32,7 +32,7 @@ const ArtAndCrafts = () => {
                     <option value='Cartoon Drawing'>Cartoon Drawing</option>
                 </select>
             </label>
-            <div className='grid grid-cols-3 gap-x-4 gap-y-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-8'>
                 {paintings.map(p => <Link to={`/art-and-crafts/${p._id}`}><PaintingCard painting={p} key={p._id}></PaintingCard></Link>)}
 
             </div>

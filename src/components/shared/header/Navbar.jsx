@@ -4,14 +4,14 @@ import { AuthContext } from '../../../authentication/AuthProvider';
 import { GiPencilBrush } from "react-icons/gi";
 
 const Navbar = () => {
-    const { user, logout } = useContext(AuthContext)
+    const { user, logout, loader } = useContext(AuthContext)
     console.log(user)
 
     const navlist = <>
-        <li><NavLink to='/' className='text-white navlist'>Home</NavLink></li>
-        <li> <NavLink to='/art-and-crafts' className='text-white navlist'>Paintings</NavLink></li>
-        <li> <NavLink to='/add-anc' className='text-white navlist'>Add painting</NavLink></li>
-        <li><NavLink to={`/myAnC/${user?.uid}`} className='text-white navlist'>My Paintings</NavLink></li>
+        <li><NavLink to='/' className='lg:text-white text-black navlist'>Home</NavLink></li>
+        <li> <NavLink to='/art-and-crafts' className='lg:text-white text-black navlist'>Paintings</NavLink></li>
+        <li> <NavLink to='/add-anc' className='lg:text-white text-black navlist'>Add painting</NavLink></li>
+        <li><NavLink to={`/myAnC/${user?.uid}`} className='lg:text-white text-black navlist'>My Paintings</NavLink></li>
     </>
     const handleLogOut = () => [
         logout()
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="navbar bg-transparent container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -52,7 +52,8 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                {user ?
+                {user ? loader ?
+                    <span className="loading loading-spinner loading-sm"></span> :
                     <div className="navbar-end gap-2">
                         <div className="avatar">
                             <div className="w-10 rounded-full">
@@ -61,7 +62,7 @@ const Navbar = () => {
                                     src={user.photoURL} />
                             </div>
                         </div>
-                        <p className='text-white font-medium text-lg'>{user.displayName}</p>
+                        <p className='text-white lg:block hidden font-medium text-lg'>{user.displayName}</p>
                         <button className='btn bg-white ' onClick={handleLogOut}>logout</button>
                     </div> :
                     <div className="navbar-end">
