@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay'
+import { Link } from 'react-router-dom';
 
 const PaintingSlider = ({ paintings }) => {
     return (
@@ -34,7 +35,7 @@ const PaintingSlider = ({ paintings }) => {
                 }}
 
             >
-                {paintings.map(painting => <SwiperSlide key={painting._id}><SliderCard painting={painting}></SliderCard></SwiperSlide>)}
+                {paintings.map(painting => <SwiperSlide key={painting._id}><Link to={`art-and-crafts/${painting._id}`}><SliderCard painting={painting}></SliderCard></Link></SwiperSlide>)}
 
 
 

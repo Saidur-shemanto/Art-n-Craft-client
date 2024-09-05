@@ -117,7 +117,7 @@ const AddAnC = () => {
 
 
 
-                <button className="btn btn-success w-full">Submit</button>
+                <button className="btn text-white bg-orange-500 w-full">Submit</button>
 
 
 

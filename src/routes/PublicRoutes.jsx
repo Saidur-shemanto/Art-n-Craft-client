@@ -7,6 +7,7 @@ import AddAnC from "../components/artAndCrafts/addAnC";
 import ArtAndCrafts from "../components/artAndCrafts/ArtAndCrafts";
 import MyAnC from "../components/artAndCrafts/MyAnC";
 import PrivateRoutes from "./PrivateRoutes";
+import PaintingDetails from "../components/artAndCrafts/PaintingDetails";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,13 @@ const router = createBrowserRouter([
                 path: 'myAnC/:id',
                 element: <PrivateRoutes><MyAnC></MyAnC></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/myPaintings/${params.id}`)
+
+
+            },
+            {
+                path: 'art-and-crafts/:id',
+                element: <PrivateRoutes><PaintingDetails></PaintingDetails></PrivateRoutes>,
+                loader: ({ params }) => fetch(`http://localhost:5000/paintings/${params.id}`)
 
 
             },

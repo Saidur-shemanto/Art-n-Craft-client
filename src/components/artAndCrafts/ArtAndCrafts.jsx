@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import PaintingCard from './PaintingCard';
 
 const ArtAndCrafts = () => {
@@ -18,7 +18,7 @@ const ArtAndCrafts = () => {
     }
     return (
         <div className='container mx-auto '>
-            <label className="form-control w-full max-w-xs mx-auto ">
+            <label className="form-control w-full max-w-xs mx-auto mb-4">
                 <div className="label">
                     <span className="label-text">Sub Category</span>
                 </div>
@@ -32,8 +32,8 @@ const ArtAndCrafts = () => {
                     <option value='Cartoon Drawing'>Cartoon Drawing</option>
                 </select>
             </label>
-            <div className='grid grid-cols-3'>
-                {paintings.map(p => <PaintingCard paintings={p} key={p._id}></PaintingCard>)}
+            <div className='grid grid-cols-3 gap-x-4 gap-y-8'>
+                {paintings.map(p => <Link to={`/art-and-crafts/${p._id}`}><PaintingCard painting={p} key={p._id}></PaintingCard></Link>)}
 
             </div>
 
