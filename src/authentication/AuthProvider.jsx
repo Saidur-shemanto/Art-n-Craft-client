@@ -17,6 +17,26 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
+    const useWindowDimensions = () => {
+        const [windowDimensions, setWindowDimensions] = useState({
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+
+        useEffect(() => {
+            const handleResize = () => {
+                setWindowDimensions({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            };
+            window.addEventListener("resize", handleResize);
+            return () => window.removeEventListener("resize", handleResize);
+        }, []);
+
+        return windowDimensions;
+    };
+    const deviceWidth = useWindowDimensions()
 
 
     const login = (email, password) => {
@@ -57,7 +77,8 @@ const AuthProvider = ({ children }) => {
         login,
         googleLogin,
         setUser,
-        githubLogin
+        githubLogin,
+        deviceWidth
 
 
     }

@@ -21,7 +21,7 @@ const Signup = (props) => {
                 newUser._id = _id
                 console.log(newUser)
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

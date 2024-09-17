@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../authentication/AuthProvider';
 import { GiPencilBrush } from "react-icons/gi";
+import { motion } from "framer-motion"
 
 const Navbar = () => {
     const { user, logout, loader } = useContext(AuthContext)
@@ -19,8 +20,14 @@ const Navbar = () => {
             .then()
     ]
     return (
-        <div className='bg-black'>
-            <div className="navbar bg-transparent container mx-auto">
+        <div
+
+            className='bg-black'>
+            <motion.div
+                initial={{ y: -250, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, type: "spring", stiffness: 150 }}
+                className="navbar bg-transparent container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">
@@ -44,7 +51,10 @@ const Navbar = () => {
 
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl text-white"><GiPencilBrush />Paintify</Link>
+                    <Link
+
+                        to='/'
+                        className="btn btn-ghost text-xl text-white"><GiPencilBrush />Paintify</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -72,7 +82,7 @@ const Navbar = () => {
                 }
 
 
-            </div>
+            </motion.div>
         </div>
     );
 };

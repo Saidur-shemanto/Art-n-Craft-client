@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <HomePage></HomePage>,
-                loader: () => fetch('http://localhost:5000/paintings')
+                loader: () => fetch('https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/paintings')
             },
             {
                 path: 'add-anc',
@@ -26,20 +26,20 @@ const router = createBrowserRouter([
             {
                 path: 'art-and-crafts',
                 element: <ArtAndCrafts></ArtAndCrafts>,
-                loader: () => fetch('http://localhost:5000/paintings')
+                loader: () => fetch('https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/paintings')
 
             },
             {
                 path: 'myAnC/:id',
                 element: <PrivateRoutes><MyAnC></MyAnC></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/myPaintings/${params.id}`)
+                loader: ({ params }) => fetch(`https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/myPaintings/${params.id}`)
 
 
             },
             {
                 path: 'art-and-crafts/:id',
                 element: <PrivateRoutes><PaintingDetails></PaintingDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/paintings/${params.id}`)
+                loader: ({ params }) => fetch(`https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/paintings/${params.id}`)
 
 
             },

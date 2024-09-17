@@ -21,7 +21,7 @@ const PaintingDetails = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/paintings/${loader[0]._id}`, {
+                fetch(`https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/paintings/${loader[0]._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -57,7 +57,7 @@ const PaintingDetails = () => {
 
 
         // send data to the server
-        fetch(`http://localhost:5000/paintings/${loader[0]._id}`, {
+        fetch(`https://an-c-server-byokqseg1-md-saidur-rahman-shemantos-projects.vercel.app/paintings/${loader[0]._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

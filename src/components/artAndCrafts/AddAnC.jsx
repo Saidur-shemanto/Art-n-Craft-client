@@ -21,7 +21,7 @@ const AddAnC = () => {
         const paintInfo = {
             userId, image, itemName, sub, shortDesc, price, rating, custom, process
         }
-        fetch('http://localhost:5000/paintings', {
+        fetch('https://an-c-server-md-saidur-rahman-shemantos-projects.vercel.app/paintings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
