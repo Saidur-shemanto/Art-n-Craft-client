@@ -5,6 +5,8 @@ import TextSection from './TextSection';
 import bgImage from '../../assets/New Project.png'
 import PaintingSlider from './PaintingSlider';
 import { useLoaderData } from 'react-router-dom';
+import ExhibitionSection from './ExhibitionSection';
+import TextImageSection from './TextImageSection';
 
 const HomePage = () => {
     const paintings = useLoaderData()
@@ -19,6 +21,10 @@ const HomePage = () => {
 
             <TextSection></TextSection>
             <PaintingSlider paintings={paintings}></PaintingSlider>
+            <TextImageSection></TextImageSection>
+            <hr className="h-px my-8 bg-gray-200 border-0 container mx-auto dark:bg-gray-700" />
+            <ExhibitionSection></ExhibitionSection>
+
 
         </div>
     );

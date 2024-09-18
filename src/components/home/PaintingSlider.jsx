@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const PaintingSlider = ({ paintings }) => {
     return (
-        <div className='py-10 container mx-auto'>
+        <div className='py-10 container mx-auto mb-16'>
             <Swiper
                 modules={[Scrollbar, A11y, Autoplay]}
 

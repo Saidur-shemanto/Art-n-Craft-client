@@ -7,6 +7,13 @@ body {
 
 }
 
+.shadowbtn:hover {
+
+    box-shadow: 0 0 10px #7bd3ee, 0 0 10px #01c9fb;
+    ;
+
+}
+
 .navlist:hover {
     text-decoration: underline;
 
