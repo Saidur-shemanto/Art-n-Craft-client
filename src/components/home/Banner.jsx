@@ -26,9 +26,9 @@ const Banner = () => {
 
     console.log('device size' + deviceWidth.width)
     return (
-        <div className='text-center  mx-auto container pt-6'>
+        <div className='text-center  mx-auto container pt-6 lg:px-0 px-2'>
             <motion.p
-                className=' font-extrabold text-4xl lg:text-9xl mb-4 text-white'
+                className=' font-extrabold text-3xl lg:text-9xl mb-4 text-white'
                 initial='initial'
                 animate='animate'
                 variants={textMotion}
@@ -36,7 +36,7 @@ const Banner = () => {
 
             >The New Modern</motion.p>
             <motion.p
-                className=' font-extrabold text-4xl lg:text-9xl mb-4 text-white'
+                className=' font-extrabold text-3xl lg:text-9xl mb-4 text-white'
                 initial='initial'
                 animate='animate'
                 variants={textMotion}

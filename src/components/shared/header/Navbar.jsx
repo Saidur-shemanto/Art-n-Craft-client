@@ -75,7 +75,7 @@ const Navbar = () => {
                         <p className='text-white lg:block hidden font-medium text-lg'>{user.displayName}</p>
                         <button className='btn bg-white ' onClick={handleLogOut}>logout</button>
                     </div> :
-                    <div className="navbar-end">
+                    <div className="navbar-end gap-1">
                         <Link to='/signup' className="btn">Sign Up</Link>
                         <Link to='/login' className="btn">Log In</Link>
                     </div>

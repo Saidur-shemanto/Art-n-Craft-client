@@ -5,11 +5,17 @@ import { motion } from 'framer-motion'
 const PaintingCard = ({ painting }) => {
 
     return (
-        <motion.div
-            whileHover={{ scale: 1.05 }}
-            className=' flex flex-col justify-between hover:shadow-2xl'>
+        <div
 
-            <img src={painting.image} alt="" className='w-full h-80 object-cover mx-auto' />
+            className=' flex flex-col justify-between '>
+
+            <div className='overflow-hidden'>
+
+
+                <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    src={painting.image} alt="" className='w-full h-80 object-cover mx-auto' />
+            </div>
             <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
 
 
@@ -17,7 +23,7 @@ const PaintingCard = ({ painting }) => {
 
 
             <p className=' text-sm text-gray-600 mt-2 overflow-hidden'>{painting.shortDesc}</p>
-        </motion.div>
+        </div>
     );
 };
 

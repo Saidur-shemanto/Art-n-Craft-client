@@ -14,15 +14,18 @@ const ImageBanner = () => {
         hidden: {
             rotate: 0,
             opacity: 0,
-            x: '100vh',
+            x: '30px',
 
         },
         display: {
-            rotate: deviceWidth.width < 750 ? 0 : 348,
+            rotate: deviceWidth.width < 1000 ? 0 : [0, 0, 0, -12],
             x: 0,
             opacity: 1,
             transition: {
-                duration: 1
+                duration: 1,
+                type: "spring",
+                stiffness: 50,
+                dumping: 15
             }
 
         }
@@ -32,14 +35,17 @@ const ImageBanner = () => {
     const imageMotion2 = {
         hidden: {
             rotate: 0,
-            x: '-100vh',
+            x: '-30px',
 
         },
         display: {
-            rotate: deviceWidth.width < 750 ? 0 : 372,
+            rotate: deviceWidth.width < 1000 ? 0 : [0, 0, 0, 12],
             x: 0,
             transition: {
-                duration: 1
+                duration: 1,
+                type: "spring",
+                stiffness: 50,
+                dumping: 15
             }
 
         }
@@ -58,7 +64,7 @@ const ImageBanner = () => {
 
     return (
 
-        <motion.div className='flex lg:flex-row flex-col items-center mx-auto container pt-7'>
+        <motion.div className='flex lg:flex-row flex-col items-center mx-auto container px-4 pt-7'>
 
 
 

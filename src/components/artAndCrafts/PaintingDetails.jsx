@@ -3,6 +3,7 @@ import { SlOptionsVertical } from 'react-icons/sl';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../authentication/AuthProvider';
 import Swal from 'sweetalert2';
+import { motion } from 'framer-motion'
 
 const PaintingDetails = () => {
     const loader = useLoaderData()
@@ -79,23 +80,56 @@ const PaintingDetails = () => {
                 }
             })
     }
+    const textAnimation = {
+        initial: {
+            x: 50,
+            opacity: 0
+
+        },
+        animate: {
+            x: [50, 50, 0],
+            opacity: 1
+        }
+
+    }
+    const imageAnimation = {
+        initial: {
+            x: -50,
+            opacity: 0
+
+        },
+        animate: {
+            x: [-50, -50, 0],
+            opacity: 1
+        }
+
+    }
 
 
 
     return (
-        <div className='flex w-full items-center p-20 relative'>
-            <div className='w-full'>
+        <div className='flex flex-col-reverse lg:flex-row w-full items-center relative'>
+            <motion.div
+                variants={textAnimation}
+                initial='initial'
+                animate='animate'
+                className='w-full space-y-4'>
                 <p className='text-6xl'>{loader[0].itemName}</p>
                 <p className='text-xl'>{loader[0].shortDesc}</p>
 
-            </div>
-            <div className='w-full'>
-                <img src={loader[0].image} alt="" className='w-full' />
-            </div>
+            </motion.div>
+            <motion.div
+                variants={imageAnimation}
+                initial='initial'
+                animate='animate'
+
+                className='w-full'>
+                <img src={loader[0].image} alt="" className='w-full border-4 border-white' />
+            </motion.div>
             {user.uid === loader[0].userId ?
-                <div className="dropdown dropdown-bottom absolute right-20 top-0">
+                <div className="dropdown dropdown-bottom absolute right-0 top-0">
                     <div tabIndex={0} role="button" className="btn m-1"><SlOptionsVertical /></div>
-                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
+                    <ul tabIndex={0} className="dropdown-content lg:right-0 right-2 menu bg-base-100 rounded-box z-[1] w-32 p-2 shadow">
                         <li onClick={() => document.getElementById('my_modal_3').showModal()}><a>Edit</a></li>
                         <li onClick={handleDelete}><a>Delete</a></li>
                         {/* You can open the modal using document.getElementById('ID').showModal() method */}
@@ -183,7 +217,7 @@ const PaintingDetails = () => {
                         </dialog>
                     </ul>
                 </div> :
-                <div className="tooltip dropdown dropdown-bottom absolute right-20 top-0" data-tip='you cannot edit or delete this as you are not the uploader'>
+                <div className="tooltip lg:tooltip-top tooltip-left  dropdown dropdown-bottom absolute right-0 lg:right-20 top-0" data-tip='You are not the uploader'>
                     <div tabIndex={0} role="button" className=" btn m-1 " ><SlOptionsVertical /></div>
                 </div>}
 

@@ -9,7 +9,7 @@ import { useLoaderData } from 'react-router-dom';
 const HomePage = () => {
     const paintings = useLoaderData()
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <div style={{ backgroundImage: `url(${bgImage})` }}
                 className='bg-no-repeat bg-cover bg-center w-full' >
                 <Banner></Banner>
