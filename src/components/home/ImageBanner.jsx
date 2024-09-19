@@ -71,7 +71,7 @@ const ImageBanner = () => {
             <motion.div
                 onViewportEnter={() => setView1(true)}
                 onViewportLeave={() => setView1(false)}
-                className='w-full lg:w-1/4'
+                className='w-full lg:w-1/4 overflow-hidden lg:overflow-visible'
             >
                 <motion.img
                     variants={imageMotion1}
@@ -85,7 +85,7 @@ const ImageBanner = () => {
             <motion.div
                 onViewportEnter={() => setView2(true)}
                 onViewportLeave={() => setView2(false)}
-                className='w-full lg:w-1/4'
+                className='w-full lg:w-1/4 overflow-hidden lg:overflow-visible'
             >
                 <motion.img
 
@@ -101,7 +101,7 @@ const ImageBanner = () => {
             <motion.div
                 onViewportEnter={() => setView3(true)}
                 onViewportLeave={() => setView3(false)}
-                className='w-full lg:w-1/4'
+                className='w-full lg:w-1/4 overflow-hidden lg:overflow-visible'
             >
                 <motion.img
                     variants={imageMotion1}
@@ -116,7 +116,7 @@ const ImageBanner = () => {
             <motion.div
                 onViewportEnter={() => setView4(true)}
                 onViewportLeave={() => setView4(false)}
-                className='w-full lg:w-1/4'
+                className='w-full lg:w-1/4 overflow-hidden lg:overflow-visible'
             >
                 <motion.img
 

@@ -7,11 +7,12 @@ import PaintingSlider from './PaintingSlider';
 import { useLoaderData } from 'react-router-dom';
 import ExhibitionSection from './ExhibitionSection';
 import TextImageSection from './TextImageSection';
+import GreekGodSection from './GreekGodSection';
 
 const HomePage = () => {
     const paintings = useLoaderData()
     return (
-        <div className='overflow-x-hidden'>
+        <div className=''>
             <div style={{ backgroundImage: `url(${bgImage})` }}
                 className='bg-no-repeat bg-cover bg-center w-full' >
                 <Banner></Banner>
@@ -21,6 +22,7 @@ const HomePage = () => {
 
             <TextSection></TextSection>
             <PaintingSlider paintings={paintings}></PaintingSlider>
+            <GreekGodSection></GreekGodSection>
             <TextImageSection></TextImageSection>
             <hr className="h-px my-8 bg-gray-200 border-0 container mx-auto dark:bg-gray-700" />
             <ExhibitionSection></ExhibitionSection>
